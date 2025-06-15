@@ -24,14 +24,6 @@ env/
 *.out
 *.err
 
-# Data files
-*.csv
-*.tsv
-*.json
-*.xml
-*.yaml
-*.yml
-
 # System files
 .DS_Store
 Thumbs.db
