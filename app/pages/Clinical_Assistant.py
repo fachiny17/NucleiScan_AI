@@ -23,7 +23,7 @@ st.title("NucleiScan AI: Chatbot")
 # Initialize Firebase (only once)
 if not firebase_admin._apps:
     try:
-        cred = credentials.Certificate("nucleiscan-ai-29e52debe285.json")  # Use actual filename
+        cred = credentials.Certificate("nucleiscan-ai-29e52debe285.json")
         firebase_admin.initialize_app(cred)
     except FirebaseError as e:
         st.error(f"Firebase initialization failed: {str(e)}")

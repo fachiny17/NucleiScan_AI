@@ -29,7 +29,10 @@ MODEL_CONFIG = {
 }
 
 def get_clean_data():
-    data = pd.read_csv("../data/data.csv")    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    data_path = os.path.join(project_root, "data", "data.csv")
+    data = pd.read_csv(data_path)    
     data = data.drop(['Unnamed: 32', 'id'], axis=1)    
     data['diagnosis'] = data['diagnosis'].map({'M':1, 'B':0})
 
