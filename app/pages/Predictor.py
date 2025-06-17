@@ -155,10 +155,10 @@ def get_radar_chart(input_data):
     return fig
 
 def add_predictions(input_data):
-    current_dire = os.path.dirname(os.path.abspath(__file__))
-    pro_root = os.path.dirname(os.path.dirname(current_dire))
-    model_path = os.path.join(pro_root, "models", "logistic_regression_model.joblib")
-    scaler_path = os.path.join(pro_root, "models", "scaler.joblib")    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    model_path = os.path.join(project_root, "models", "logistic_regression_model.joblib")
+    scaler_path = os.path.join(project_root, "models", "scaler.joblib")    
     model = load(model_path)
     scaler = load(scaler_path)
 
