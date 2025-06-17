@@ -15,9 +15,6 @@ from firebase_admin import credentials, firestore
 from firebase_admin.exceptions import FirebaseError
 
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-css_path = os.path.join(current_dir, '../assets/style.css')
-
 if "messages" not in st.session_state:
     st.session_state.messages = []
     
@@ -208,6 +205,8 @@ def main():
         st.session_state.current_page = None
         st.switch_page("../app/NucleiScan_AI.py")
 
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    css_path = os.path.join(current_dir, "..", "assets", "style.css")
     with open(css_path) as f:
         st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
     nuclei_predict()
