@@ -206,7 +206,7 @@ def main():
         st.switch_page("../app/NucleiScan_AI.py")
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    css_path = os.path.join(current_dir, "assets", "style.css")
+    css_path = os.path.join(current_dir, "NucleiScan_AI", "assets", "style.css")
     with open(css_path) as f:
         st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
     nuclei_predict()
@@ -215,3 +215,4 @@ def main():
         
 if __name__ == '__main__':
     main() 
+    #/home/fachiny17/codex/NucleiScan_AI/assets/style.css
