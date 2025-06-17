@@ -26,7 +26,7 @@ if not firebase_admin._apps:
         cred = credentials.Certificate("nucleiscan-ai-29e52debe285.json")  # Use actual filename
         firebase_admin.initialize_app(cred)
     except FirebaseError as e:
-        st.error(f"Firebase initialization failed: {e}")
+        st.error(f"Firebase initialization failed: {str(e)}")
         st.stop()
 
 # Initialize Firestore client
