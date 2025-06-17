@@ -5,10 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
-
-# Import libraries to save the model
 from joblib import dump, load
-# import pickle
 
 np.random.seed(42)  # For reproducibility
 
@@ -21,7 +18,7 @@ def create_model(data):
     X = scaler.fit_transform(X)
     
     # split the data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2) #, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
     
     # train
     model = LogisticRegression()
@@ -34,24 +31,33 @@ def create_model(data):
     
     return model, scaler
 
-
-
 def get_clean_data():
-    data = pd.read_csv("../data/data.csv")    
+    # Get the absolute path to the data file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(current_dir, "..", "data", "data.csv")
+    
+    data = pd.read_csv(data_path)    
     data = data.drop(['Unnamed: 32', 'id'], axis=1)    
     data['diagnosis'] = data['diagnosis'].map({'M':1, 'B':0})
 
     return data
-
 
 def main():
     data = get_clean_data()  
     
     model, scaler = create_model(data)
     
-    # Save the model and scaler in the "models" directory using joblib
-    dump(model, "../models/logistic_regression_model.joblib")     
-    dump(scaler, "../models/scaler.joblib")
+    # Create models directory if it doesn't exist
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    models_dir = os.path.join(current_dir, "..", "models")
+    os.makedirs(models_dir, exist_ok=True)
+    
+    # Save the model and scaler with absolute paths
+    model_path = os.path.join(models_dir, "logistic_regression_model.joblib")
+    scaler_path = os.path.join(models_dir, "scaler.joblib")
+    
+    dump(model, model_path)     
+    dump(scaler, scaler_path)
 
 if __name__ == '__main__':
     main()
