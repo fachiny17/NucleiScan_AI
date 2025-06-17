@@ -214,5 +214,4 @@ def main():
         st.switch_page("pages/Clinical_Assistant.py")
         
 if __name__ == '__main__':
-    main() 
-    /home/fachiny17/codex/NucleiScan_AI/assets/style.css
+    main()
