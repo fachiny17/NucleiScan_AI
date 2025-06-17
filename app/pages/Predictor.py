@@ -155,9 +155,11 @@ def get_radar_chart(input_data):
     return fig
 
 def add_predictions(input_data):
-    model = load('../models/logistic_regression_model.joblib')
-    scaler = load('../models/scaler.joblib')
-
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    model = os.path.join(project_root, "models", "logistic_regression_model.joblib")
+    scaler = os.path.join(project_root, "models", "scaler.joblib")    
+    
     input_array = np.array(list(input_data.values())).reshape(1, -1)
 
     input_array_scaled = scaler.transform(input_array)
