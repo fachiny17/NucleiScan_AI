@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from joblib import dump, load
+import pickle
 import plotly.graph_objects as go
 
 from pathlib import Path
@@ -161,9 +162,12 @@ def add_predictions(input_data):
     model_path = project_root / "models" / "logistic_regression_model.joblib"
     scaler_path = project_root / "models" / "scaler.joblib"
 
-    model = load(model_path)
-    scaler = load(scaler_path)
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
 
+    with open(scaler_path, 'rb') as f:
+        scaler = pickle.load(f)
+        
     input_array = np.array(list(input_data.values())).reshape(1, -1)
     input_array_scaled = scaler.transform(input_array)
     prediction = model.predict(input_array_scaled)
