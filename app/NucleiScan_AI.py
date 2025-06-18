@@ -195,7 +195,7 @@ def main():
 
     cols = st.columns(5)
     with cols[0]:
-        st.markdown("**1. Adjust the slidebar**")
+        st.markdown("**1. Adjust the sidebar**")
         st.markdown("""
         <div style='color: #5a6a7a; font-size: 0.9rem; line-height: 1.5;'>
             Adjust nuclear characteristics via the sidebar controls including:
