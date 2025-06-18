@@ -12,13 +12,6 @@ env/
 *.env
 .env
 
-# Machine learning artifacts
-*.h5
-*.ckpt
-*.pth
-*.joblib
-*.pkl
-
 # Logs and debug files
 *.log
 *.out
