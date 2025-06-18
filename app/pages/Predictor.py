@@ -159,8 +159,8 @@ def get_radar_chart(input_data):
 def add_predictions(input_data):
     # Set root to 2 levels above current file, which is the NucleiScan_AI dir
     project_root = Path(__file__).resolve().parents[2]
-    model_path = project_root / "models" / "logistic_regression_model.joblib"
-    scaler_path = project_root / "models" / "scaler.joblib"
+    model_path = project_root / "models" / "logistic_regression_model.pkl"
+    scaler_path = project_root / "models" / "scaler.pkl"
 
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
