@@ -161,9 +161,8 @@ def add_predictions(input_data):
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))  # Go up 3 levels
     
     # Use correct path format for both local and Streamlit Cloud
-    models_dir = os.path.join(base_dir, "models")
-    model_path = os.path.join(models_dir, "logistic_regression_model.joblib")
-    scaler_path = os.path.join(models_dir, "scaler.joblib")
+    model_path = os.path.join(base_dir, "models", "logistic_regression_model.joblib")
+    scaler_path = os.path.join(base_dir, "models", "scaler.joblib")
     
     model = load(model_path)
     scaler = load(scaler_path)
