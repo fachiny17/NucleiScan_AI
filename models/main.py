@@ -34,7 +34,7 @@ def create_model(data):
 def get_clean_data():
     # Get the absolute path to the data file
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(current_dir, "..", "data", "data.csv")
+    data_path = os.path.join(current_dir, "data", "data.csv")
     
     data = pd.read_csv(data_path)    
     data = data.drop(['Unnamed: 32', 'id'], axis=1)    
@@ -43,7 +43,7 @@ def get_clean_data():
     return data
 
 def main():
-    data = get_clean_data()  
+    data = get_clean_data()
     
     model, scaler = create_model(data)
     
