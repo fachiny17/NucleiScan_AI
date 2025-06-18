@@ -154,11 +154,30 @@ def get_radar_chart(input_data):
 
     return fig
 
+
 def add_predictions(input_data):
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(current_dir))
-    model_path = os.path.join(project_root, "models", "logistic_regression_model.joblib")
-    scaler_path = os.path.join(project_root, "models", "scaler.joblib")    
+    # Get the BASE directory (where NucleiScan_AI/ lives)
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # /app/pages/
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))  # Go up 3 levels
+    
+    # Use correct path format for both local and Streamlit Cloud
+    models_dir = os.path.join(base_dir, "models")
+    model_path = os.path.join(models_dir, "logistic_regression_model.joblib")
+    scaler_path = os.path.join(models_dir, "scaler.joblib")
+    
+    # Debug output
+    print(f"Current directory: {current_dir}")
+    print(f"Base directory: {base_dir}")
+    print(f"Models directory contents: {os.listdir(models_dir)}")
+    
+    # Load with verification
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(
+            f"Model file not found at {model_path}\n"
+            f"Directory exists: {os.path.exists(models_dir)}\n"
+            f"Files present: {os.listdir(models_dir) if os.path.exists(models_dir) else 'N/A'}"
+        )
+    
     model = load(model_path)
     scaler = load(scaler_path)
 
