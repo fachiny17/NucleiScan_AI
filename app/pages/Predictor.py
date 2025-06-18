@@ -3,10 +3,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from joblib import dump, load
-import pickle
 import plotly.graph_objects as go
 
-from pathlib import Path
 from typing import Generator
 from groq import Groq
 import json
@@ -157,19 +155,17 @@ def get_radar_chart(input_data):
     return fig
 
 def add_predictions(input_data):
-    # Set root to 2 levels above current file, which is the NucleiScan_AI dir
-    project_root = Path(__file__).resolve().parents[2]
-    model_path = project_root / "models" / "logistic_regression_model.pkl"
-    scaler_path = project_root / "models" / "scaler.pkl"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    model_path = os.path.join(project_root, "models", "logistic_regression_model.joblib")
+    scaler_path = os.path.join(project_root, "models", "scaler.joblib")    
+    model = load(model_path)
+    scaler = load(scaler_path)
 
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
-
-    with open(scaler_path, 'rb') as f:
-        scaler = pickle.load(f)
-        
     input_array = np.array(list(input_data.values())).reshape(1, -1)
+
     input_array_scaled = scaler.transform(input_array)
+
     prediction = model.predict(input_array_scaled)
 
     st.subheader("Cell cluster prediction")
