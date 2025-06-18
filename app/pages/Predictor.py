@@ -154,16 +154,11 @@ def get_radar_chart(input_data):
 
     return fig
 
-
 def add_predictions(input_data):
-    # Get the BASE directory (where NucleiScan_AI/ lives)
-    current_dir = os.path.dirname(os.path.abspath(__file__))  # /app/pages/
-    base_dir = os.path.dirname(os.path.dirname(current_dir))  # Go up 3 levels
-    
-    # Use correct path format for both local and Streamlit Cloud
-    model_path = os.path.join(base_dir, "models", "logistic_regression_model.joblib")
-    scaler_path = os.path.join(base_dir, "models", "scaler.joblib")
-    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    model_path = os.path.join(project_root, "models", "logistic_regression_model.joblib")
+    scaler_path = os.path.join(project_root, "models", "scaler.joblib")    
     model = load(model_path)
     scaler = load(scaler_path)
 
