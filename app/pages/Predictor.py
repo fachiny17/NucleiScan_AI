@@ -201,13 +201,6 @@ def nuclei_predict():
 
 # Main function to run the Streamlit app.
 def main():
-    #st.set_page_config(
-    #    page_title="NucleiScan AI: Predictor",
-    #    page_icon=":female-doctor:",
-    #    layout="wide",
-    #    initial_sidebar_state="expanded"
-    #)
-
     if st.button("← Back to Home"):
         st.session_state.current_page = None
         st.switch_page("../app/NucleiScan_AI.py")
