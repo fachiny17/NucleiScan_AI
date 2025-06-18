@@ -6,7 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from joblib import dump, load
-import pickle
 
 np.random.seed(42)  # For reproducibility
 
@@ -54,15 +53,11 @@ def main():
     os.makedirs(models_dir, exist_ok=True)
     
     # Save the model and scaler with absolute paths
-    model_path = os.path.join(models_dir, "logistic_regression_model.pkl")
-    scaler_path = os.path.join(models_dir, "scaler.pkl")
+    model_path = os.path.join(models_dir, "logistic_regression_model.joblib")
+    scaler_path = os.path.join(models_dir, "scaler.joblib")
     
-    # Save using pickle
-    with open(model_path, 'wb') as f:
-        pickle.dump(model, f)
-    
-    with open(scaler_path, 'wb') as f:
-        pickle.dump(scaler, f)
+    dump(model, model_path)     
+    dump(scaler, scaler_path)
 
 if __name__ == '__main__':
     main()
