@@ -17,8 +17,7 @@ st.set_page_config(
 )
 
 if st.button("← Back to Home"):
-    st.session_state.current_page = Noneshutdown
-    
+    st.session_state.current_page = None
     st.switch_page("../app/NucleiScan_AI.py")
 
 st.title("NucleiScan AI: Chatbot")
