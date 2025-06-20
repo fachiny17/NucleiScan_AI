@@ -175,13 +175,14 @@ def main():
         st.markdown("""
         <div class="feature-card">
             <div class="feature-icon">💡</div>
-            <div class="feature-title">Clinical Decision Assistant</div>
+            <div class="feature-title">AI-Powered Clinical Assistant</div>
             <div class="feature-desc">
-                Evidence-based clinical guidance powered by the latest NCCN guidelines and 
-                peer-reviewed research. Get second opinions on complex cases.
+                Real-time analysis of nuclear features with instant risk assessment. 
+                Provides clear malignancy probability scores and easy-to-interpret results 
+                for clinical decision making.
             </div>
             <div class="feature-desc">
-                <strong>Features:</strong> Treatment recommendations, diagnostic criteria, prognostic factors
+                <strong>Key Features:</strong> Benign/Malignant classification, risk score visualization, case comparison
             </div>
         </div>
         """, unsafe_allow_html=True)
