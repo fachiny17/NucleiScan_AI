@@ -2,6 +2,7 @@ import streamlit as st
 from typing import Generator
 from groq import Groq
 import uuid
+import json
 
 import os
 import base64
@@ -25,6 +26,7 @@ st.title("NucleiScan AI: Chatbot")
 # Initialize Firebase (only once)
 if not firebase_admin._apps:
     try:
+        st.write("FIREBASE_CREDENTIALS_B64 exists?", os.getenv("FIREBASE_CREDENTIALS_B64") is not None)
         cred_json = base64.b64decode(os.getenv("FIREBASE_CREDENTIALS_B64")).decode("utf-8")
         cred = credentials.Certificate(json.loads(cred_json))
         firebase_admin.initialize_app(cred)
