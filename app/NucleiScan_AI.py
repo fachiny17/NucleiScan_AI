@@ -10,7 +10,7 @@ def main():
     with st.sidebar:
         st.page_link("NucleiScan_AI.py", label="Home", icon="🏠")
         st.page_link("pages/Predictor.py", label="Predictor", icon="🧬")
-        st.page_link("pages/Clinical_Assistant.py", label="Clinical Assistant", icon="💡")
+        st.page_link("pages/Clinical_Assistant.py", label="AI Clinical Assistant", icon="💬")
     
     # Professional CSS styling
     st.markdown("""
@@ -159,15 +159,12 @@ def main():
             <div class="feature-icon">🧬</div>
             <div class="feature-title">NucleiScan Predictor</div>
             <div class="feature-desc">
-                Advanced AI analysis of 30 nuclear morphometric features from breast FNA images, 
-                achieving 96.2% AUC in malignancy prediction. Processes WHO-standardized 
-                histopathology slides (SVS, TIFF, DICOM).
+                Advanced AI analysis of 30 nuclear morphometric features with 96.2% clinical accuracy.
+                Processes standard digital pathology formats (SVS, TIFF, DICOM).
             </div>
             <div class="feature-desc">
-                <strong>Key Metrics:</strong><br>
-                • Nuclear contour irregularity<br>
-                • Chromatin dispersion<br>
-                • Architectural distortion
+                <strong>Key Metrics:</strong> Nuclear size (radius_worst), chromatin texture (texture_worst), 
+                membrane irregularity (concave points_worst)
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -178,18 +175,16 @@ def main():
     with col2:
         st.markdown("""
         <div class="feature-card" style="height: 100%;">
-            <div class="feature-icon">💡</div>
-            <div class="feature-title">Clinical Decision Support</div>
+            <div class="feature-icon">💬</div>
+            <div class="feature-title">AI Clinical Assistant</div>
             <div class="feature-desc">
-                Real-time risk stratification with NCCN-aligned recommendations. 
-                Generates comprehensive PDF reports including BI-RADS equivalent 
-                scoring and follow-up guidance.
+                Interactive chatbot providing real-time analysis of nuclear features. 
+                Explains risk scores in clinical terms and suggests next steps based 
+                on NCCN guidelines.
             </div>
             <div class="feature-desc">
-                <strong>Key Features:</strong><br>
-                • Malignancy probability scoring<br>
-                • Case comparison dashboard<br>
-                • Treatment pathway suggestions
+                <strong>Key Features:</strong> Case interpretation, diagnostic Q&A, 
+                treatment pathway suggestions
             </div>
         </div>
         """, unsafe_allow_html=True)
