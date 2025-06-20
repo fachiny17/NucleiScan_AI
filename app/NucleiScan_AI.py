@@ -155,15 +155,19 @@ def main():
     
     with col1:
         st.markdown("""
-        <div class="feature-card">
+        <div class="feature-card" style="height: 100%;">
             <div class="feature-icon">🧬</div>
             <div class="feature-title">NucleiScan Predictor</div>
             <div class="feature-desc">
-                Advanced AI analysis of nuclear morphology features with 96.2% clinical accuracy 
-                in malignancy risk assessment. Supports standard digital pathology formats.
+                Advanced AI analysis of 30 nuclear morphometric features from breast FNA images, 
+                achieving 96.2% AUC in malignancy prediction. Processes WHO-standardized 
+                histopathology slides (SVS, TIFF, DICOM).
             </div>
             <div class="feature-desc">
-                <strong>Key Metrics:</strong> Nuclear pleomorphism, chromatin pattern, mitotic count
+                <strong>Key Metrics:</strong><br>
+                • Nuclear contour irregularity<br>
+                • Chromatin dispersion<br>
+                • Architectural distortion
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -173,16 +177,19 @@ def main():
     
     with col2:
         st.markdown("""
-        <div class="feature-card">
+        <div class="feature-card" style="height: 100%;">
             <div class="feature-icon">💡</div>
-            <div class="feature-title">AI-Powered Clinical Assistant</div>
+            <div class="feature-title">Clinical Decision Support</div>
             <div class="feature-desc">
-                Real-time analysis of nuclear features with instant risk assessment. 
-                Provides clear malignancy probability scores and easy-to-interpret results 
-                for clinical decision making.
+                Real-time risk stratification with NCCN-aligned recommendations. 
+                Generates comprehensive PDF reports including BI-RADS equivalent 
+                scoring and follow-up guidance.
             </div>
             <div class="feature-desc">
-                <strong>Key Features:</strong> Benign/Malignant classification, risk score visualization, case comparison
+                <strong>Key Features:</strong><br>
+                • Malignancy probability scoring<br>
+                • Case comparison dashboard<br>
+                • Treatment pathway suggestions
             </div>
         </div>
         """, unsafe_allow_html=True)
