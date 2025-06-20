@@ -149,7 +149,7 @@ def main():
         unsafe_allow_html=True
     )
     
-    # Feature Cards Section
+    # Feature Cards Section.
     st.markdown("### Core Features")
     col1, col2 = st.columns(2, gap="large")
     
