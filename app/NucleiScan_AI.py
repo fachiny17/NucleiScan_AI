@@ -160,7 +160,6 @@ def main():
             <div class="feature-title">NucleiScan Predictor</div>
             <div class="feature-desc">
                 Advanced AI analysis of 30 nuclear morphometric features with 96.2% clinical accuracy.
-                Processes standard digital pathology formats (SVS, TIFF, DICOM).
             </div>
             <div class="feature-desc">
                 <strong>Key Metrics:</strong> Nuclear size (radius_worst), chromatin texture (texture_worst), 
