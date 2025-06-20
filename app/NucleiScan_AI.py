@@ -144,7 +144,7 @@ def main():
     st.markdown(
         '<div class="subtitle">'
         'Advanced AI-powered breast cancer diagnostics platform combining deep learning analysis '
-        'with clinical decision support for pathologists and oncologists.'
+        'with clinical decision support for users (mostly pathologists and oncologists).'
         '</div>', 
         unsafe_allow_html=True
     )
@@ -198,7 +198,7 @@ def main():
 
     cols = st.columns(5)
     with cols[0]:
-        st.markdown("**1. Adjust the sidebar**")
+        st.markdown("**1. Adjust the inputs(metrics)**")
         st.markdown("""
         <div style='color: #5a6a7a; font-size: 0.9rem; line-height: 1.5;'>
             Adjust nuclear characteristics via the sidebar controls including:
