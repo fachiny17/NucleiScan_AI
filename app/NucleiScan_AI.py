@@ -9,7 +9,7 @@ def main():
     
     with st.sidebar:
         st.page_link("NucleiScan_AI.py", label="Home", icon="🏠")
-        st.page_link("pages/Predictor.py", label="Predictor", icon="🔬")
+        st.page_link("pages/Predictor.py", label="Predictor", icon="🧬")
         st.page_link("pages/Clinical_Assistant.py", label="Clinical Assistant", icon="💡")
     
     # Professional CSS styling
@@ -156,7 +156,7 @@ def main():
     with col1:
         st.markdown("""
         <div class="feature-card">
-            <div class="feature-icon">🔬</div>
+            <div class="feature-icon">🧬</div>
             <div class="feature-title">NucleiScan Predictor</div>
             <div class="feature-desc">
                 Advanced AI analysis of nuclear morphology features with 96.2% clinical accuracy 
