@@ -3,6 +3,8 @@ from typing import Generator
 from groq import Groq
 import uuid
 
+import os
+import base64
 import firebase_admin
 from firebase_admin import credentials, firestore
 from firebase_admin.exceptions import FirebaseError
@@ -15,7 +17,8 @@ st.set_page_config(
 )
 
 if st.button("← Back to Home"):
-    st.session_state.current_page = None
+    st.session_state.current_page = Noneshutdown
+    
     st.switch_page("../app/NucleiScan_AI.py")
 
 st.title("NucleiScan AI: Chatbot")
@@ -23,7 +26,8 @@ st.title("NucleiScan AI: Chatbot")
 # Initialize Firebase (only once)
 if not firebase_admin._apps:
     try:
-        cred = credentials.Certificate("nucleiscan-ai-29e52debe285.json")
+        cred_json = base64.b64decode(os.getenv("FIREBASE_CREDENTIALS_B64")).decode("utf-8")
+        cred = credentials.Certificate(json.loads(cred_json))
         firebase_admin.initialize_app(cred)
     except FirebaseError as e:
         st.error(f"Firebase initialization failed: {str(e)}")
