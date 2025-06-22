@@ -17,7 +17,6 @@ NucleiScan AI is an advanced AI-powered breast cancer diagnostics platform desig
 
 🧠 This solution emphasizes the use of AI during the build process and is open-source for the community to build upon.
 
-🎥 𝐌𝐲 𝟑-𝐦𝐢𝐧𝐮𝐭𝐞 𝐝𝐞𝐦𝐨 𝐯𝐢𝐝𝐞𝐨 𝐬𝐡𝐨𝐰𝐬:
 
 The real-world problem
 
