@@ -15,16 +15,6 @@ NucleiScan AI is an advanced AI-powered breast cancer diagnostics platform desig
 🗂️ GitHub: for version control and code sharing
 
 
-🧠 This solution emphasizes the use of AI during the build process and is open-source for the community to build upon.
-
-
-The real-world problem
-
-How the solution works
-
-The AI-driven impact
-
-
 🌐 Visit: https://nucleiscanai.streamlit.app/
 
 📁 GitHub Repo: https://github.com/fachiny17/NucleiScan_AI
