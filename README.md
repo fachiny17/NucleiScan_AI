@@ -4,15 +4,15 @@ NucleiScan AI is an advanced AI-powered breast cancer diagnostics platform desig
 
 ⚙️ 𝐓𝐞𝐜𝐡 𝐒𝐭𝐚𝐜𝐤:
 
-🔗 Streamlit – for building the interactive web interface
+🔗 Streamlit: for building the interactive web interface
 
-📈 Scikit-learn – used Logistic Regression for classification
+📈 Scikit-learn: used Logistic Regression for classification
 
-⚡ Groq API – for lightning-fast model inference
+⚡ Groq API: for lightning-fast model inference
 
-🔥 Firebase – manages chat history and session storage
+🔥 Firebase: manages chat history and session storage
 
-🗂️ GitHub – for version control and code sharing
+🗂️ GitHub: for version control and code sharing
 
 
 🧠 This solution emphasizes the use of AI during the build process and is open-source for the community to build upon.
